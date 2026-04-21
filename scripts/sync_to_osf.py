@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 OSF_TOKEN = os.environ.get("OSF_TOKEN", "")
-NODE_ID   = "REPLACE_WITH_OSF_NODE_ID"  # set after OSF project creation
+NODE_ID   = "gv5qt"
 FILES_API = f"https://files.osf.io/v1/resources/{NODE_ID}/providers/osfstorage"
 META_API  = f"https://api.osf.io/v2/nodes/{NODE_ID}/files/osfstorage"
 

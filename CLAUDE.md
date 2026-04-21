@@ -111,4 +111,4 @@ Pre-existing folder of analyst report PDFs from a 2016–2017 download batch (~2
 - Shell: bash
 - Python: venv at project root
 - Primary GitHub: `danielwaltersjdm/stock-market-database`
-- OSF node: [set after creation]
+- OSF node: `gv5qt` (https://osf.io/gv5qt/)
