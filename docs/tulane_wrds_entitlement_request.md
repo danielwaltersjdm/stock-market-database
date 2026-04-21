@@ -10,7 +10,11 @@ I'm a faculty member in [department] and recently activated my WRDS account. Tha
 
 I'm running a text-analysis research project on earnings-call transcripts and would like to pull them programmatically via WRDS. Running `db.list_tables(library="ciq_transcripts")` returns `NotSubscribedError`, which I understand means this dataset isn't in Tulane's current subscription.
 
-Is it possible to add the **Capital IQ Transcripts** add-on (WRDS library name `ciq_transcripts`) to Tulane's subscription?
+Is it possible to add the following add-ons to Tulane's WRDS subscription?
+
+1. **Capital IQ Transcripts** (WRDS library: `ciq_transcripts`) — for earnings call transcripts
+2. **I/B/E/S Guidance** (WRDS schema: `tr_ibes_guidance`, exposed via `ibes.det_guidance` and `ibes.id_guidance`) — for management forecast events. The table catalog is visible but SELECT returns "permission denied for schema tr_ibes_guidance"
+3. **Capital IQ Key Developments** (`ciq_keydev`) — optional second source for guidance events, less important if I/B/E/S Guidance is added
 
 For context:
 - Tulane's Capital IQ Pro web seat *does* give me transcript access through the UI, but downloading them one-by-one isn't feasible for a Russell 3000 × 2005–2025 corpus (~250,000 transcripts).

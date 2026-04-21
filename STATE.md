@@ -2,29 +2,36 @@
 
 ## Done
 
-- Project scoped: Russell 3000, 2005–2025, four document types
-- Tulane data resources mapped (see `docs/data_sources.md`)
-- WRDS individual account obtained (2026-04-21)
-- Standard project scaffolding: directory structure, `.gitignore`, `CLAUDE.md`, `requirements.txt`
-- GitHub repo created
-- OSF project created
-- OSF sync hook installed
+- Project scaffolded (directory, git repo, OSF project `gv5qt`, OSF sync hook)
+- Python 3.12 venv with wrds 3.5, pandas 2.2, SQLAlchemy 2.0
+- WRDS account active; entitlements verified
+- Russell 3000 proxy universe built: 236,981 firm-quarters, 8,026 GVKEYs, 80 quarters 2005Q1-2024Q4 → `processed_data/public/universe_russell3000_proxy.parquet`
+- I/B/E/S analyst forecasts pilot: 50 firms × 2023 → 59,842 detail forecasts, 5,843 consensus rows, 722 analysts, 116 brokers. **End-to-end pipeline validated.**
+
+## Blocked — NOT entitled at Tulane's WRDS tier
+
+- `ciq_transcripts` (earnings call transcripts)
+- `ciq_keydev` (key developments)
+- `ibes.det_guidance` / `id_guidance` (I/B/E/S Guidance)
+- `wrdssec` (SEC Analytics)
+
+Entitlement request drafted at `docs/tulane_wrds_entitlement_request.md` for transcripts + I/B/E/S Guidance.
 
 ## In Progress
 
-- Initial WRDS connection test
-- Inventory of legacy `PDFzips/` contents
+- Awaiting user action: send entitlement request email to Tulane WRDS admin
+- Analyst-report PDF strategy (deferred until research-design mechanism is specified)
 
-## Blocked
+## Next (immediate)
 
-- Analyst PDF bulk-pull strategy — requires decision on research-design mechanism (anchoring vs. tone transmission vs. attribution vs. reference dependence). Determines sample size and selection rule.
+1. **Scale up I/B/E/S:** extend forecast pull from pilot (50 firms, 2023) to full universe + 2005–2025
+2. **I/B/E/S recommendations:** pull `ibes.recddet` for same universe+range (buy/hold/sell + target prices)
+3. **EDGAR 10-K/Q downloader:** scripted pull, stored in `raw_data/filings/`
+4. **Compustat fundamentals:** pull `comp.fundq` for universe (firm-quarter panel of accounting variables)
 
-## Next
+## Next (pending entitlement or decision)
 
-1. Connect to WRDS; verify entitlements for `ciq_transcripts`, `ciq_keydev`, `ibes`, `comp`, `crsp`
-2. Pull Russell 3000 historical constituents → `processed_data/public/russell3000_constituents.parquet`
-3. Build linking table (GVKEY ↔ PERMNO ↔ CIQ company_id) for the universe
-4. First transcript pull: small pilot (~50 firms, 2023 Q4) to validate pipeline before scaling
-5. I/B/E/S pull: detail + summary for universe + time range
-6. EDGAR 10-K/Q downloader
-7. Inventory legacy PDFzips and assess overlap with target universe
+5. **Transcripts:** when entitlement arrives (or fallback to Refinitiv Workspace manual pulls)
+6. **Guidance:** when entitlement arrives (or fallback to Capital IQ web / IQ_GUIDANCE_* Excel functions)
+7. **Analyst PDFs:** design-dependent, scope with user after behavioral-mechanism decision
+8. **Inventory legacy `PDFzips/`:** identify 2016–2017 source, coverage, overlap with target universe

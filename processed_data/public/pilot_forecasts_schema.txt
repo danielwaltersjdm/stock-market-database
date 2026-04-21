@@ -1,0 +1,73 @@
+ibes.id
+      name  nullable              type                                                     comment
+0   ticker      True        VARCHAR(6)                                          IBES Ticker Symbol
+1    cusip      True        VARCHAR(8)                                                 CUSIP/SEDOL
+2    oftic      True        VARCHAR(6)                                      Official Ticker Symbol
+3    cname      True       VARCHAR(16)                                                Company Name
+4   dilfac      True  DOUBLE PRECISION                                             Dilution Factor
+5      pdi      True        VARCHAR(1)                             Primary/Diluted Indicator (P/D)
+6   ccopcf      True        VARCHAR(1)                       Canadian Curr. or Parent/Consol. Flag
+7    mscip      True        VARCHAR(1)  Morgan Stanley Capital International Flag (no longer used)
+8      uai      True        VARCHAR(1)                                   Uniform Actuals Indicator
+9   usfirm      True          SMALLINT    USFIRM=0 if from .INT file and USFIRM=1 if from .US file
+10  sdates      True              DATE                                      Start Date, SAS Format
+
+ibes.det_epsus
+           name  nullable              type                                                   comment
+0        ticker      True        VARCHAR(6)                                        IBES Ticker Symbol
+1         cusip      True        VARCHAR(8)                                               CUSIP/SEDOL
+2         oftic      True        VARCHAR(6)                                    Official Ticker Symbol
+3         cname      True       VARCHAR(16)                                              Company Name
+4       actdats      True              DATE                               Activation Date, SAS Format
+5     estimator      True  DOUBLE PRECISION                               Contributing estimator code
+6        analys      True  DOUBLE PRECISION                                              Analyst Code
+7        currfl      True        VARCHAR(1)                   Canadian Currency Flag (Estimate Level)
+8           pdf      True        VARCHAR(1)                     Primary/Diluted Flag (Estimate Level)
+9           fpi      True        VARCHAR(1)                                 Forecast Period Indicator
+10      measure      True        VARCHAR(3)                             Measure (Data Type Indicator)
+11        value      True  DOUBLE PRECISION                                            Estimate Value
+12         curr      True        VARCHAR(3)                                                  Currency
+13       usfirm      True          SMALLINT  USFIRM=0 if from .INT file and USFIRM=1 if from .US file
+14      fpedats      True              DATE                      Forecast Period End Date, SAS Format
+15      acttims      True              TIME                               Activation Time, SAS Format
+16      revdats      True              DATE                                   Review Date, SAS Format
+17      revtims      True              TIME                                   Review Time, SAS Format
+18      anndats      True              DATE                                 Announce Date, SAS Format
+19      anntims      True              TIME                                 Announce time, SAS Format
+20       actual      True  DOUBLE PRECISION                Actual Value, from the Detail Actuals File
+21  actdats_act      True              DATE      Activation date of the Actual, from the Actuals File
+22  acttims_act      True              TIME      Activation time of the Actual, from the Actuals File
+23  anndats_act      True              DATE        Announce date of the Actual, from the Actuals File
+24  anntims_act      True              TIME        Announce time of the Actual, from the Actuals File
+25     curr_act      True        VARCHAR(3)                     Currency from the Detail Actuals file
+26  report_curr      True        VARCHAR(3)                                           Report Currency
+
+ibes.statsum_epsus
+           name  nullable              type                                                    comment
+0        ticker      True        VARCHAR(6)                                         IBES Ticker Symbol
+1         cusip      True        VARCHAR(8)                                                CUSIP/SEDOL
+2         oftic      True        VARCHAR(6)                                     Official Ticker Symbol
+3         cname      True       VARCHAR(16)                                               Company Name
+4      statpers      True              DATE                    I/B/E/S Statistical Period (SAS Format)
+5       measure      True        VARCHAR(6)                                                    Measure
+6       fiscalp      True        VARCHAR(3)                                                Periodicity
+7           fpi      True        VARCHAR(1)                                  Forecast Period Indicator
+8       estflag      True        VARCHAR(1)                     Estimate Flag (P=Primary, S=Secondary)
+9       curcode      True        VARCHAR(3)                                              Currency Code
+10       numest      True  DOUBLE PRECISION                                        Number of Estimates
+11        numup      True  DOUBLE PRECISION                                                  Number Up
+12      numdown      True  DOUBLE PRECISION                                                Number Down
+13       medest      True  DOUBLE PRECISION                                            Median Estimate
+14      meanest      True  DOUBLE PRECISION                                              Mean Estimate
+15        stdev      True  DOUBLE PRECISION                                         Standard Deviation
+16      highest      True  DOUBLE PRECISION                                              High Estimate
+17       lowest      True  DOUBLE PRECISION                                               Low Estimate
+18       usfirm      True          SMALLINT   USFIRM=0 if from .INT file and USFIRM=1 if from .US file
+19      fpedats      True              DATE                      Forecast Period End Date (SAS Format)
+20       actual      True  DOUBLE PRECISION                 Actual Value, from the Detail Actuals File
+21  actdats_act      True              DATE       Activation date of the Actual, from the Actuals File
+22  acttims_act      True              TIME       Activation time of the Actual, from the Actuals File
+23  anndats_act      True              DATE  Announce date of the Actual, from the Detail Actuals File
+24  anntims_act      True              TIME  Announce time of the Actual, from the Detail Actuals File
+25     curr_act      True        VARCHAR(3)    Currency from Actual file, from the Detail Actuals File
+

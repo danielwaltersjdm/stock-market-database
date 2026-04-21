@@ -1,0 +1,46 @@
+ibes.det_guidance
+             name  nullable              type                                                           comment
+0          ticker      True           VARCHAR                                                    I/B/E/S ticker
+1         pdicity      True           VARCHAR                                       Periodicity (e.g. ANN, QTR)
+2         measure      True           VARCHAR                                     Measure (data type indicator)
+3            curr      True           VARCHAR                                         ISO 3-digit currency code
+4           units      True           VARCHAR                                          Units of guidance values
+5      range_desc      True           VARCHAR                                                    Guidance Range
+6       diff_code      True           VARCHAR                          Difference reason (e.g. asset writedown)
+7         act_std      True           VARCHAR                                Accounting standard (e.g. US GAAP)
+8          action      True           VARCHAR                                Action by TR (e.g. split adjusted)
+9   guidance_code      True           VARCHAR                 Guidance relative to consensus (e.g. beat, match)
+10        actdats      True              DATE                      Activation date when data was captured by TR
+11        anndats      True              DATE              Announce date when data was announced by the company
+12       mod_date      True              DATE                        Modified date when data was modified by TR
+13        acttims      True              TIME                      Activation time when data was captured by TR
+14        anntims      True              TIME              Announce time when data was announced by the company
+15       mod_time      True              TIME                        Modified time when data was modified by TR
+16         prd_yr      True  DOUBLE PRECISION                                                     Calendar year
+17        prd_mon      True  DOUBLE PRECISION                                                    Calendar month
+18         eefymo      True  DOUBLE PRECISION      Earnings estimates fiscal year end month (e.g. 12=December )
+19          val_1      True  DOUBLE PRECISION                                           Guidance value if given
+20          val_2      True  DOUBLE PRECISION                      Upper value of guidance value range if given
+21   mean_at_date      True  DOUBLE PRECISION                                 Analyst Estimate Consensus (mean)
+22         usfirm      True  DOUBLE PRECISION  U.S. Firm (USFIRM=0 if from .INT, and USFIRM=1 if from .US file)
+
+ibes.id_guidance
+              name  nullable              type                                                           comment
+0           ticker      True           VARCHAR                                                    I/B/E/S ticker
+1            cusip      True           VARCHAR                                                       CUSIP/SEDOL
+2            oftic      True           VARCHAR                                                   Official ticker
+3       home_mktcd      True           VARCHAR                              Trading symbol with exchange country
+4            cname      True           VARCHAR                                                 Company long name
+5         instrmnt      True           VARCHAR           Instrument type (S=Main listing, D=Dual Listing, A=ADR)
+6           exchcd      True           VARCHAR                                             Trading exchange code
+7        countrycd      True           VARCHAR                                            Domiciled country code
+8     ex_countrycd      True           VARCHAR                                              Trading country code
+9           secnam      True           VARCHAR                                                       Sector name
+10          indnam      True           VARCHAR                                                     Industry name
+11  ibes_tkr_sdate      True              DATE                                            IBES ticker start date
+12  ibes_tkr_edate      True              DATE                                              IBES ticker end date
+13        mod_date      True              DATE                                            Last modification date
+14  ibes_tkr_stime      True              TIME                                            IBES ticker start time
+15  ibes_tkr_etime      True              TIME                                              IBES ticker end time
+16        mod_time      True              TIME                                            Last modification time
+17          usfirm      True  DOUBLE PRECISION  U.S. Firm (USFIRM=0 if from .INT, and USFIRM=1 if from .US file)
