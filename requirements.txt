@@ -1,0 +1,34 @@
+# WRDS access
+wrds
+psycopg2-binary
+sqlalchemy
+
+# Data manipulation
+pandas
+numpy
+pyarrow
+
+# HTTP / scraping (EDGAR, Refinitiv, etc.)
+requests
+urllib3
+tqdm
+beautifulsoup4
+lxml
+
+# PDF extraction (for legacy PDFzips and any Refinitiv exports)
+pdfplumber
+pypdf
+
+# Text analysis
+nltk
+spacy
+scikit-learn
+gensim
+
+# Notebooks / viz
+jupyter
+matplotlib
+seaborn
+
+# Dev
+python-dotenv

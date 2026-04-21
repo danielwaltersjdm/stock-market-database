@@ -1,0 +1,29 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.ipynb_checkpoints/
+
+# Environment / credentials
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Licensed data — never commit
+# Capital IQ transcripts, analyst reports, and other licensed text are
+# licensed for academic use only and must not be redistributed.
+raw_data/
+PDFzips/
+
+# Derived text that embeds licensed content stays local too.
+# Aggregated features and metadata can move to processed_data/public/
+# if we want to publish them.
+processed_data/text/
+processed_data/private/
+
+# WRDS credentials (lives in home dir normally, but belt-and-suspenders)
+.pgpass
