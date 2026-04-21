@@ -4,9 +4,10 @@ psycopg2-binary
 sqlalchemy
 
 # Data manipulation
-pandas
-numpy
-pyarrow
+# Pin minimums to versions with Python 3.14 wheels (no compiler needed)
+pandas>=2.3
+numpy>=2.1
+pyarrow>=18
 
 # HTTP / scraping (EDGAR, Refinitiv, etc.)
 requests
@@ -23,7 +24,9 @@ pypdf
 nltk
 spacy
 scikit-learn
-gensim
+# gensim removed: no Python 3.14 wheel as of 2026-04.
+# Use scikit-learn's LatentDirichletAllocation for topic modeling,
+# or re-add gensim after installing VS Build Tools.
 
 # Notebooks / viz
 jupyter
