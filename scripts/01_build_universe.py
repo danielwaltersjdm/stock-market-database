@@ -35,8 +35,11 @@ END_YEAR = 2025
 TOP_N = 3000
 
 
+WRDS_USERNAME = "dwalters"
+
+
 def main():
-    db = wrds.Connection()
+    db = wrds.Connection(wrds_username=WRDS_USERNAME)
 
     print(f"Pulling CRSP monthly stock file {START_YEAR}-01 through {END_YEAR}-12...")
     # msf is the workhorse table: monthly prices, shares outstanding, returns.

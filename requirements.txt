@@ -1,13 +1,13 @@
 # WRDS access
-wrds
+wrds>=3.5
 psycopg2-binary
-sqlalchemy
+sqlalchemy>=2,<2.1
 
 # Data manipulation
-# Pin minimums to versions with Python 3.14 wheels (no compiler needed)
-pandas>=2.3
-numpy>=2.1
-pyarrow>=18
+# wrds 3.5 pins pandas to 2.2.x; fine on Python 3.12
+pandas>=2.2,<2.3
+numpy
+pyarrow
 
 # HTTP / scraping (EDGAR, Refinitiv, etc.)
 requests
@@ -24,9 +24,7 @@ pypdf
 nltk
 spacy
 scikit-learn
-# gensim removed: no Python 3.14 wheel as of 2026-04.
-# Use scikit-learn's LatentDirichletAllocation for topic modeling,
-# or re-add gensim after installing VS Build Tools.
+gensim
 
 # Notebooks / viz
 jupyter

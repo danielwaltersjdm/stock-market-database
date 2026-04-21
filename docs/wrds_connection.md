@@ -1,5 +1,11 @@
 # WRDS connection
 
+## Credentials
+
+- **WRDS username:** `dwalters` (not `dwalters1` — note the difference from the Windows OS username)
+- **pgpass location on Windows:** `%APPDATA%\postgresql\pgpass.conf` (= `C:\Users\dwalters1\AppData\Roaming\postgresql\pgpass.conf`)
+- In Python, always connect with `wrds.Connection(wrds_username="dwalters")`. Without the explicit username, the `wrds` package defaults to the OS username (`dwalters1`), which doesn't match `pgpass.conf` and forces an interactive re-prompt.
+
 ## One-time setup
 
 1. Install requirements:

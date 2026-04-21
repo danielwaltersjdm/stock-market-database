@@ -90,7 +90,7 @@ The public repo exists so the methodology is reproducible; the licensed inputs s
 
 ## Conventions
 
-- Python venv at `venv/`; executable is `venv/Scripts/python.exe` (Windows)
+- Python 3.12 venv at `venv/`; executable is `venv/Scripts/python.exe` (Windows). This project uses 3.12 rather than the system-default 3.14 because `wrds` 3.5.0 pins `pandas<2.3` which has no cp314 wheel.
 - Tulane corporate proxy intercepts SSL: use `verify=False` + `urllib3.disable_warnings()` for Python requests; `--insecure` for curl
 - WRDS connection: credentials in `~/.pgpass` (see `docs/wrds_connection.md`)
 - Identifier conventions: GVKEY (primary firm ID), PERMNO (CRSP), CUSIP (cross-walk), ticker (human-readable only)

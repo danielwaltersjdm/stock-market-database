@@ -70,7 +70,7 @@ def main():
     print(f"  {len(pilot_firms)} firms; {len(gvkeys)} with GVKEY link")
     print()
 
-    db = wrds.Connection()
+    db = wrds.Connection(wrds_username="dwalters")
 
     # --- map GVKEY -> CIQ companyid ----------------------------------------
     # CIQ's own linker: ciq.wrds_gvkey relates gvkey to companyid
