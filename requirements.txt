@@ -26,6 +26,10 @@ spacy
 scikit-learn
 gensim
 
+# Hugging Face (for interim public datasets before WRDS pipeline)
+datasets
+huggingface-hub
+
 # Notebooks / viz
 jupyter
 matplotlib
