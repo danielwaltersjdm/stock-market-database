@@ -1,27 +1,26 @@
-# Email draft — requesting CIQ Transcripts entitlement from Tulane WRDS admin
+# Email — requesting CIQ Transcripts + I/B/E/S Guidance entitlement
 
-**To send to:** Tulane's WRDS institutional administrator (likely Freeman School IT or Howard-Tilton business librarian — check the WRDS welcome email for the listed contact).
+**To:** Tulane WRDS institutional representative (check the WRDS welcome email for the listed contact; Freeman School IT/data services or the Howard-Tilton business librarian are the usual routes).
 
-**Subject:** Request: add `ciq_transcripts` to Tulane WRDS subscription
+**Subject:** Request: add Capital IQ Transcripts and I/B/E/S Guidance to Tulane WRDS subscription
+
+---
 
 Hi,
 
-I'm a faculty member in [department] and recently activated my WRDS account. Thanks for sponsoring the institutional subscription.
+I'm a faculty member at Tulane (Freeman School of Business) and recently activated my WRDS account — thanks for sponsoring the institutional subscription.
 
-I'm running a text-analysis research project on earnings-call transcripts and would like to pull them programmatically via WRDS. Running `db.list_tables(library="ciq_transcripts")` returns `NotSubscribedError`, which I understand means this dataset isn't in Tulane's current subscription.
+I'm starting a text-analysis research project on earnings disclosures and analyst behavior, and I've hit two entitlement gaps that I'd like to ask about. Running `SELECT` probes on the target tables returns `permission denied` even though they appear in the catalog:
 
-Is it possible to add the following add-ons to Tulane's WRDS subscription?
+1. **Capital IQ Transcripts** (WRDS library `ciq_transcripts`) — earnings call transcripts. This is the academic-standard source for conference-call NLP research; without it, the only programmatic path to a Russell 3000 transcript corpus is Refinitiv Workspace manual export, which caps at a few hundred documents per day and would take months.
 
-1. **Capital IQ Transcripts** (WRDS library: `ciq_transcripts`) — for earnings call transcripts
-2. **I/B/E/S Guidance** (WRDS schema: `tr_ibes_guidance`, exposed via `ibes.det_guidance` and `ibes.id_guidance`) — for management forecast events. The table catalog is visible but SELECT returns "permission denied for schema tr_ibes_guidance"
-3. **Capital IQ Key Developments** (`ciq_keydev`) — optional second source for guidance events, less important if I/B/E/S Guidance is added
+2. **I/B/E/S Guidance** (WRDS schema `tr_ibes_guidance`, exposed via `ibes.det_guidance` / `ibes.id_guidance`) — management guidance events. I have access to the core I/B/E/S forecast tables (`det_epsus`, `statsum_epsus`, etc.) but the Guidance add-on is gated. The Guidance file is the standard source for papers studying forward-looking managerial disclosures.
 
-For context:
-- Tulane's Capital IQ Pro web seat *does* give me transcript access through the UI, but downloading them one-by-one isn't feasible for a Russell 3000 × 2005–2025 corpus (~250,000 transcripts).
-- The WRDS-hosted dataset is the academic standard used in recent behavioral-finance NLP work (Bochkay et al., Druz et al., Huang-Zang-Zheng, etc.), so having it would also support future grad-student projects.
-- I already have access to `ibes`, `comp`, `crsp`, and `ciq` (base), which are the other libraries I'll be using.
+Is either of these in scope for a subscription add-on this cycle? If not, I'd appreciate any guidance on whether Tulane has considered them in prior renewal decisions, or whether there's a usage threshold that would justify adding them.
 
-If a subscription change isn't possible this cycle, I'd also appreciate any guidance on Tulane's Refinitiv Workspace for Students limits — that's my fallback for bulk transcript pulls.
+For reference, the libraries I already have access to at current entitlement are `crsp`, `comp`, `ibes` (core), and `ciq` (base) — sufficient for the analyst-forecast side of the project but not the managerial-disclosure side.
+
+Happy to provide additional context on the research or letters of support if that helps the case.
 
 Thanks,
 Daniel Walters
